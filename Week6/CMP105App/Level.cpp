@@ -7,6 +7,26 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 
 	// initialise game objects
 
+	gravBallText.loadFromFile("gfx/Beach_Ball.png");
+
+	gravball.setTexture(&gravBallText);
+	gravball.setSize(sf::Vector2f(100, 100));
+	gravball.setPosition(100, 100);
+
+	gravball.setInput(input);
+	gravball.setWindu(window);
+
+
+	pointBallText.loadFromFile("gfx/sonic.png");
+
+	pointball.setTexture(&pointBallText);
+	pointball.setSize(sf::Vector2f(50, 50));
+	pointball.setPosition(50, 50);
+
+	pointball.setWindu(window);
+
+
+
 }
 
 Level::~Level()
@@ -18,11 +38,16 @@ Level::~Level()
 void Level::handleInput(float dt)
 {
 
+	gravball.handleInput(dt);
+
 }
 
 // Update game objects
 void Level::update(float dt)
 {
+
+	gravball.update(dt);
+	pointball.update(dt);
 
 }
 
@@ -30,6 +55,9 @@ void Level::update(float dt)
 void Level::render()
 {
 	beginDraw();
+
+	window->draw(gravball);
+	window->draw(pointball);
 
 	endDraw();
 }

@@ -4,6 +4,8 @@
 #include "Framework/Input.h"
 #include <string.h>
 #include <iostream>
+#include "Gravball.h"
+#include "Pointball.h"
 
 
 class Level{
@@ -25,4 +27,11 @@ private:
 	Input* input;
 
 	// More level variables
+	Gravball gravball;
+	sf::Texture gravBallText;
+
+	sf::Texture pointBallText;
+	Pointball pointball;
+
+
 };
