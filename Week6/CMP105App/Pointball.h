@@ -6,7 +6,6 @@ class Pointball :
 {
 public:
 
-	float speed;
 	float acceleration;
 	sf::Vector2f target;
 	sf::Vector2f direction;

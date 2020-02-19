@@ -2,20 +2,19 @@
 
 Pointball::Pointball()
 {
-	speed = 100.f;
-	acceleration = 50.f;
-	target = sf::Vector2f(window->getSize().x - 50, window->getSize().y - 50);
+	acceleration = 500.f;
 }
 
 void Pointball::update(float dt)
 {
+	target = sf::Vector2f(input->getMouseX(), input->getMouseY());
 
-	direction = target = getPosition();
+	direction = target - getPosition();
 	direction = Vector::normalise(direction);
-	velocity = (direction * speed);
+	velocity += (direction * acceleration) * dt;
 	setPosition(getPosition() + (velocity * dt));
 
-	if (Vector::magnitude(target - getPosition()) < 10.f)
+	if (Vector::magnitude(target - getPosition()) < 2.f)
 	{
 		setPosition(target);
 	}

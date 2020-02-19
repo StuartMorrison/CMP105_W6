@@ -24,6 +24,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	pointball.setPosition(50, 50);
 
 	pointball.setWindu(window);
+	pointball.setInput(input);
 
 
 

@@ -36,7 +36,7 @@ void Gravball::update(float dt)
 	{
 		isJumping = 0;
 		setPosition(getPosition().x, window->getSize().y - getSize().y);
-			stepVelocity = sf::Vector2f(0, 0);
+		stepVelocity = (-stepVelocity) / 1.2f;
 	}
 }
 

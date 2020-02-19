@@ -42,6 +42,9 @@
     <ClCompile Include="Pointball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Angrybird.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="README.txt">
@@ -71,6 +74,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Pointball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Angrybird.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
