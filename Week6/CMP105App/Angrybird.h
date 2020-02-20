@@ -11,11 +11,15 @@ class Angrybird :
 public:
 
 	sf::RenderWindow* window;
-	
-	float acceleration;
+	sf::Vector2f startPos;
+	sf::Vector2f endPos;
 	sf::Vector2f direction;
-	bool moving;
+	sf::Vector2f stepVelocity;
+	sf::Vector2f gravity;
+	sf::Vector2f launchD, launchNormal;
+	float launchM;
 	bool drag;
+	float speed;
 
 
 

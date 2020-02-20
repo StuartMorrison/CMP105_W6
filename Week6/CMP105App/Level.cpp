@@ -31,7 +31,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 
 	angrybird.setTexture(&birdText);
 	angrybird.setSize(sf::Vector2f(50, 50));
-	angrybird.setPosition(50, 50);
+	angrybird.setPosition(50, 600);
 
 	angrybird.setWindu(window);
 	angrybird.setInput(input);
@@ -74,8 +74,8 @@ void Level::render()
 		std::cout << "Error loading font\n";
 	}
 
-	std::string xVal = std::to_string(angrybird.lcoordX);
-	std::string yVal = std::to_string(angrybird.lcoordY);
+	std::string xVal = std::to_string(angrybird.launchD.x);
+	std::string yVal = std::to_string(angrybird.launchD.y);
 	//std::string dVal = std::to_string(angrybird.distance);
 
 	text.setFont(font);
