@@ -27,6 +27,16 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	pointball.setInput(input);
 
 
+	birdText.loadFromFile("gfx/Goomba.png");
+
+	angrybird.setTexture(&birdText);
+	angrybird.setSize(sf::Vector2f(50, 50));
+	angrybird.setPosition(50, 50);
+
+	angrybird.setWindu(window);
+	angrybird.setInput(input);
+
+
 
 }
 
@@ -40,6 +50,7 @@ void Level::handleInput(float dt)
 {
 
 	gravball.handleInput(dt);
+	angrybird.handleInput(dt);
 
 }
 
@@ -49,6 +60,7 @@ void Level::update(float dt)
 
 	gravball.update(dt);
 	pointball.update(dt);
+	angrybird.update(dt);
 
 }
 
@@ -57,8 +69,37 @@ void Level::render()
 {
 	beginDraw();
 
+	if (!font.loadFromFile("font/arial.ttf"))
+	{
+		std::cout << "Error loading font\n";
+	}
+
+	std::string xVal = std::to_string(angrybird.lcoordX);
+	std::string yVal = std::to_string(angrybird.lcoordY);
+	//std::string dVal = std::to_string(angrybird.distance);
+
+	text.setFont(font);
+	text.setString(xVal + ", " + yVal);
+	text.setCharacterSize(24);
+	text.setFillColor(sf::Color::Red);
+	text.setPosition(0, 0);
+
+	if (input->isMouseLDown())
+	{
+		displayDist.setFont(font);
+		//displayDist.setString(dVal);
+		displayDist.setCharacterSize(24);
+		displayDist.setFillColor(sf::Color::Red);
+		displayDist.setPosition(0, 25);
+	}
+
+
+	window->draw(text);
+	window->draw(displayDist);
+
 	window->draw(gravball);
 	window->draw(pointball);
+	window->draw(angrybird);
 
 	endDraw();
 }

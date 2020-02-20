@@ -6,6 +6,7 @@
 #include <iostream>
 #include "Gravball.h"
 #include "Pointball.h"
+#include "Angrybird.h"
 
 
 class Level{
@@ -32,6 +33,13 @@ private:
 
 	sf::Texture pointBallText;
 	Pointball pointball;
+
+	Angrybird angrybird;
+	sf::Texture birdText;
+
+	sf::Font font;
+	sf::Text text;
+	sf::Text displayDist;
 
 
 };
